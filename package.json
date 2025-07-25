@@ -1,6 +1,7 @@
 {
   "name": "live-coaching-business",
   "version": "1.0.0",
+  "type": "module",
   "description": "Professional life coaching website built with Vue 3",
   "scripts": {
     "dev": "vite",
