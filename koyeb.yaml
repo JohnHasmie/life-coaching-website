@@ -4,7 +4,7 @@ services:
     type: web
     env: node
     git:
-      repository: https://github.com/yourusername/LiveCoachingBussines
+      repository: https://github.com/JohnHasmie/life-coaching-website
       branch: master
     build:
       builder: nixpacks
