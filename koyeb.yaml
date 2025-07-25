@@ -1,0 +1,33 @@
+name: life-coaching-website
+services:
+  - name: life-coaching-frontend
+    type: web
+    env: node
+    git:
+      repository: https://github.com/yourusername/LiveCoachingBussines
+      branch: master
+    build:
+      builder: nixpacks
+      buildCommand: npm install && npm run build
+    run:
+      command: npm start
+    ports:
+      - port: 3000
+        protocol: http
+    env:
+      - name: NODE_ENV
+        value: production
+      - name: PORT
+        value: 3000
+    routes:
+      - path: /
+        protocol: http
+    scaling:
+      min: 1
+      max: 3
+    healthcheck:
+      path: /
+      port: 3000
+      interval: 30s
+      timeout: 10s
+      retries: 3 
